@@ -33,6 +33,7 @@ public final class ProxyDecoratorFactory {
    */
   public static <T> T createCaching(T decorated, Class<T> tClass) {
     RawHandler rawHandler = new RawHandler() {
+      // TODO: Hash on method args as well as the method.
       private final Map<Method, Object> cache = new HashMap<>();
 
       @Override
